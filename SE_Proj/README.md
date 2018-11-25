@@ -21,3 +21,10 @@ INSTALLATION:
 2. Open terminal and move to the directory Steganography-Based-Message-Transfer/SE_Proj
 3. Type chmod a+x install.sh
 4. Type ./install.sh
+
+DEMO:
+1. Normal Image:
+    ![](cat.png)
+
+2. Text-encoded Image:
+    ![](new.png)
