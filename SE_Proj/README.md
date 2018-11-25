@@ -23,8 +23,16 @@ INSTALLATION:
 4. Type ./install.sh
 
 DEMO:
-1. Normal Image:
+1. Normal Image:  
+
+
+
+
     ![](cat.png)
 
 2. Text-encoded Image:
+
+
+
+
     ![](new.png)
