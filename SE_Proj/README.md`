@@ -10,11 +10,11 @@ DESCRIPTION:
 This project uses both end-to-end encryption and Image steganography to transfer messages from a client to server,
 Image steganography refers to hiding any kind of information be it text, another image inside an image.
 Here are some links to read more about Steganography:
-[https://towardsdatascience.com/steganography-hiding-an-image-inside-another-77ca66b2acb1]
-[https://en.wikipedia.org/wiki/Steganography]
+(https://towardsdatascience.com/steganography-hiding-an-image-inside-another-77ca66b2acb1)
+(https://en.wikipedia.org/wiki/Steganography)
 
-The project implements end-to-end encryption using RSA encryption provided by the module PyCryptodome[https://pycryptodome.readthedocs.io/en/latest/].
-The database used is MySQL and I am using mysql-connector-python[https://dev.mysql.com/doc/connector-python/en/] for establishing connection to database.
+The project implements end-to-end encryption using RSA encryption provided by the module [PyCryptodome](https://pycryptodome.readthedocs.io/en/latest/).
+The database used is MySQL and I am using [mysql-connector-python](https://dev.mysql.com/doc/connector-python/en/) for establishing connection to database.
 
 INSTALLATION:
 1. Clone the repository
