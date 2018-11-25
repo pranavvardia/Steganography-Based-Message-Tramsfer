@@ -54,11 +54,13 @@ def get_ip():
 def main():
     ip = get_ip()
     new_ip = ip[:-1]
-    key = RSA.generate(1024)
+    key = RSA.generate(2048)
     private_key = key.export_key()
     file_out = open("private.pem", "wb")
-    file_out.write(private_key)
     public_key = key.publickey().export_key()
+    file_out.write(private_key)
+    file_out_pub = open("public.pem", "wb")
+    file_out_pub.write(public_key)
     print(key.publickey())
     db_insert_info(new_ip,public_key)
 

@@ -1,4 +1,6 @@
 from PIL import Image
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
 def genData(data):
 
         # list of binary codes
@@ -66,24 +68,23 @@ def encode_enc(newimg, data):
             x += 1
 
 # Encode data into image
-def encode():
-    img = input("Enter image name(with extension): ")
+def encode(img,msg):
+    # img = input("Enter image name(with extension): ")
     image = Image.open(img, 'r')
 
-    data = input("Enter data to be encoded : ")
-    if (len(data) == 0):
+    # data = input("Enter data to be encoded : ")
+    if (len(msg) == 0):
         raise ValueError('Data is empty')
 
     newimg = image.copy()
-    encode_enc(newimg, data)
+    encode_enc(newimg, msg)
 
-    new_img_name = input("Enter the name of new\
-                         image(with extension): ")
+    new_img_name = "new.png"
     newimg.save(new_img_name, str(new_img_name.split(".")[1].upper()))
 
 # Decode the data in the image
-def decode():
-    img = input("Enter image name(with extension) :")
+def decode(img):
+    # img = input("Enter image name(with extension) :")
     image = Image.open(img, 'r')
 
     data = ''
@@ -111,10 +112,15 @@ def main():
     a = int(input(":: Welcome to Steganography ::\n"
                         "1. Encode\n 2. Decode\n"))
     if (a == 1):
-        encode()
+        encode('cat.png', 'hello')
 
     elif (a == 2):
-        print("Decoded word- " + decode())
+        msg = decode('new.png')
+        # key = RSA.importKey(open('private.pem').read())
+        # cipher = PKCS1_OAEP.new(key)
+        # message = cipher.decrypt(msg)
+        print(msg)
+        # print("Decoded word- " + decode())
     else:
         raise Exception("Enter correct input")
 
