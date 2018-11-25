@@ -13,47 +13,31 @@ import codecs
 import png
 
 def main():
-	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	if len(sys.argv) != 3:
-		print ("Correct usage: script, IP address, port number")
-		exit()
 	IP_address = str(sys.argv[1])
 	Port = int(sys.argv[2])
-	server.connect((IP_address, Port))
 	public_key = ''.join((get_public_key(IP_address)))
-	# print (public_key)
 	imported_pk = RSA.importKey(public_key)
-	# print(imported_pk)
 
 	while True:
+		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		if len(sys.argv) != 3:
+			print ("Correct usage: script, IP address, port number")
+			exit()
+		server.connect((IP_address, Port))
+
 		message = input()
 		message = message.encode('ascii')
 		cipher = PKCS1_OAEP.new(imported_pk)
 		ciphertext = cipher.encrypt(message)
 		text = ciphertext.decode('latin-1')
-		# print(type(text))
 
-		# text = ciphertext.decode("ascii")
 		encode("cat.png",text)
 
-		ms = decode('new.png')
-		msg = bytes(ms,'latin-1')
-		# new_msg = "{:<256}".format(msg)
-		priv_key = RSA.importKey(open('private.pem').read())
-		cipher1 = PKCS1_OAEP.new(priv_key)
-		final = cipher1.decrypt(msg)
-		print(final)
 		fname = 'new.png'
-		# print(type(fname))
 		with open(fname, 'rb') as f:
-		# r = png.Reader(file=fname)
-			l = f.read()
-			# while (l)
-		print(l)
-		server.sendall(l)
-				# print('Sent', repr(l))
-				# l = f.read(1024)
+			str_img = f.read()
 		f.close()
+		server.sendall(str_img)
 		sys.stdout.flush()
 		server.close()
 
