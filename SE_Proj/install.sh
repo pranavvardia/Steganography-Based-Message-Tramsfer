@@ -1,2 +1,2 @@
-sudo pip3 install requirements.txt
-python db_connector.py
+pip3 install -r requirements.txt
+python3 db_connector.py

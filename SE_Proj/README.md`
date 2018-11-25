@@ -7,4 +7,7 @@ with the condition that both should be connected to the same WiFi
 network
 
 INSTALLATION:
-Clone the repository and then in terminal run the command: ./install.sh
+1. Clone the repository
+2. Open terminal and move to the directory Steganography-Based-Message-Transfer/SE_Proj
+3. Type chmod a+x install.sh
+4. Type ./install.sh
