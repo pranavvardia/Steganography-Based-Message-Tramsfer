@@ -1,12 +1,12 @@
 # EATS
 Encryption And Text Steganography
 
-PROJECT AIM:
+PROJECT AIM:  
 To send messages which are encrypted using end-to-end encryption and steganographically encoded in an image over WiFi
 with the condition that both should be connected to the same WiFi
 network
 
-DESCRIPTION:
+DESCRIPTION:  
 This project uses both end-to-end encryption and Image steganography to transfer messages from a client to server,
 Image steganography refers to hiding any kind of information be it text, another image inside an image.
 Here are some links to read more about Steganography:
