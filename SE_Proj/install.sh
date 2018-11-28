@@ -1,2 +1,2 @@
 pip3 install -r requirements.txt
-python3 db_connector.py
+# python3 db_connector.py
