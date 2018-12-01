@@ -1,2 +1,5 @@
-*.pem
-*.png
+private.pem
+public.pem
+cat.png
+new.png
+received.png

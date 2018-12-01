@@ -29,6 +29,7 @@ def main():
 		message = message.encode('ascii')
 		cipher = PKCS1_OAEP.new(imported_pk)
 		ciphertext = cipher.encrypt(message)
+		# print(ciphertext)
 		text = ciphertext.decode('latin-1')
 
 		encode("cat.png",text)

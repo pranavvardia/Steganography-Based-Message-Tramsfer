@@ -34,8 +34,10 @@ while True:
 	f.close()
 	ms = decode('received_file.png')
 	msg = bytes(ms,'latin-1')
+	# print(msg)
 	priv_key = RSA.importKey(open('private.pem').read())
 	cipher1 = PKCS1_OAEP.new(priv_key)
+	# print(cipher1)
 	final = cipher1.decrypt(msg)
 	with open('output.txt', 'w') as f:
 		f.write(final.decode('utf-8'))
