@@ -37,10 +37,13 @@ while True:
 	# print(msg)
 	priv_key = RSA.importKey(open('private.pem').read())
 	cipher1 = PKCS1_OAEP.new(priv_key)
-	# print(cipher1)
 	final = cipher1.decrypt(msg)
-	with open('output.txt', 'w') as f:
-		f.write(final.decode('utf-8'))
+	final1 = final.decode('utf-8')
+	# f_str = final1 + 'received from'
+	# print(f_str)
+	# print(cipher1)
+	with open('output.txt', 'a') as f:
+		f.write(final1 + "\n")
 
 conn.close()
 server.close()
